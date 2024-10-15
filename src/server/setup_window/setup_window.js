@@ -1,3 +1,8 @@
+try{
+nodegit = require("nodegit");
+}catch(err){
+process.stdout.write(err+"\n")
+}
 cfn=require('./conv_fname')
 lc=require('./lent_conv')
 pauseable=require('pauseable')
@@ -205,10 +210,12 @@ function set_satus_song(status){
     document.getElementById("song_title_idx").innerText=status.title.split('#')[0].trim()+" - "+status.song_idx
     document.getElementById("song_num").innerText=status.number
 }
+process.stdout.write("----1\n")
 ipcRenderer.on('to_s_flines', function (event, arg){
     document.getElementById('song_prev_first_line').innerHTML=arg[0]
     document.getElementById('song_nxt_first_line').innerHTML=arg[1]
 })
+process.stdout.write("----2\n")
 let dur=0
 let cur=0
 ipcRenderer.on('to_s_audioevent', function (event, arg){
@@ -591,4 +598,57 @@ function lent_change(){
     ipcRenderer.send('to_main_lent',global.lent_force)
 }
 
-module.exports={delete_talk,move_talk,search,ok_all,new_talk,init,refreshdb,songordercall,lent_change,importcall,newsongorder,makeplaces,reset_talk,refresh_talk,submit_talk}
+
+process.stdout.write("----0\n")
+
+// Path to the local repository
+const repoPath = config.git_path;
+
+process.stdout.write("----1\n")
+async function pullChangesFromUpstream() {
+process.stdout.write("CALLED.\n");
+  try {
+    // Open the local repository
+    const repo = await nodegit.Repository.open(repoPath);
+
+    // Get the current branch
+    const branchRef = await repo.getCurrentBranch();
+    const branchName = branchRef.shorthand();
+
+    process.stdout.write(`Currently on branch: ${branchName}\n`);
+
+    // Fetch from the 'upstream' remote
+    const remote = await nodegit.Remote.lookup(repo, "NT-prez");
+    process.stdout.write("Fetching from upstream...");
+    await remote.fetch(["refs/heads/master:refs/remotes/upstream/master"], {
+      callbacks: {
+        credentials: () => {
+          return nodegit.Cred.userpassPlaintextNew("username", "password"); // Adjust as necessary
+        },
+        certificateCheck: () => 1, // Skip certificate checks (for testing)
+      },
+    });
+    process.stdout.write("Fetch completed.");
+
+    // Get the upstream branch reference
+    const upstreamBranch = await repo.getBranch("refs/remotes/upstream/master");
+
+    // Merge the upstream/master into the current branch
+    process.stdout.write("Merging upstream/master...");
+    await repo.mergeBranches(branchName, upstreamBranch, nodegit.Signature.now("HBotondI", "horvath.botond.istvan@gmail.com"));
+
+    process.stdout.write("Merge completed.");
+
+  } catch (error) {
+    process.stdout.write("Error during pull operation:"+ error);
+  }
+}
+
+// Call the function to pull changes
+
+
+function updateGit(){
+    process.stdout.write("PUSHED.");
+    pullChangesFromUpstream();
+}
+module.exports={updateGit,delete_talk,move_talk,search,ok_all,new_talk,init,refreshdb,songordercall,lent_change,importcall,newsongorder,makeplaces,reset_talk,refresh_talk,submit_talk}

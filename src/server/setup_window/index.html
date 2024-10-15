@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>NT-prez Setup</title>
+  </head>
+  <body>
+    <div id="show_main">
+	<label for="lent_force">Böjtvan?</label><select id="lent_force" value="auto" onchange="sw.lent_change()">
+	    <option value=0>Auto</option>
+	    <option value=1>Igen</option>
+	    <option value=2>Nem</option>
+	</select>
+	<div id="song_params">
+	    <p class="fleft">Állapot:</p>
+	    <p class="fmid"> Ének </p>
+	    <br/>
+	    <p class="fleft">Cím+index:</p>
+	    <p class="fmid" id="song_title_idx"></p>
+	    <br/>
+	    <p class="fleft">Dia:</p>
+	    <p class="fmid" id="song_num"></p>
+	    <br/>
+	    <p class="fleft">Tartalom:</p>
+	    <br/>
+	    <p class="fmid" id="song_content"></p>
+	    <br/>
+	    <p class="fleft">Előző dia eleje:</p>
+	    <p class="fmid" id="song_prev_first_line"></p>
+	    <br/>
+	    <p class="fleft">Következő dia eleje:</p>
+	    <p class="fmid" id="song_nxt_first_line"></p>
+	</div>
+	<div id="music_params">
+	    <p class="fleft">Állapot:</p>
+	    <p class="fmid"> Zene </p>
+	    <br/>
+	    <p class="fleft">File:</p>
+	    <p class="fmid" id="music_title"></p>
+	    <br/>
+	    <p class="fleft">Auloplay:</p>
+	    <p class="fmid" id="music_auto"></p>
+	    <br/>
+	    <p class="fleft">Megy?:</p>
+	    <p class="fmid" id="music_state"></p>
+	    <br/>
+	    <p class="fleft">Idő:</p>
+	    <p class="fmid" id="music_time"></p>
+	</div>
+	<div id="talk_params">
+	    <p class="fleft">Állapot:</p>
+	    <p class="fmid"> Bevezető </p>
+	    <br/>
+	    <p class="fleft">Cím:</p>
+	    <p class="fmid" id="talk_title"></p>
+	    <br/>
+	    <p class="fleft">Név:</p>
+	    <p class="fmid" id="talk_name"></p>
+	    <br/>
+	    <p class="fleft">Zene:</p>
+	    <p class="fmid" id="talk_music"></p>
+	    <br/>
+	    <p class="fleft">Kép:</p>
+	    <p class="fmid" id="talk_image"></p>
+	    <br/>
+	    <p class="fleft">Köszönjük:</p>
+	    <p class="fmid" id="talk_thanks"></p>
+	    <br/>
+	    <p class="fleft">Megy a zene?:</p>
+	    <p class="fmid" id="talk_music_state"></p>
+	    <br/>
+	    <p class="fleft">Idő:</p>
+	    <p class="fmid" id="talk_music_time"></p>
+	</div>
+    </div>
+    <div id="head_info">
+            <p id="adresslabel">Ha ezt látod több mint 2 másodpercig valami nagyon nem stimmel</p>
+            <p id="adressqr">Próbáld újraindítani a programot</p>
+	    <button id="Refresh" onclick="sw.refreshdb()">Adatbázis újratöltése</button>
+    </div>
+    <button onclick="sw.importcall()">Dalok importálása</button>
+    <label>A songimport mappábol txt/xml</label>
+    <div>
+      <button onclick="sw.songordercall()">Zenerend aktualizálása</button>
+      <form id="songorderform">
+	<label>kezd:</label>
+        <input type="number" id="so_from">
+	<label>vég:</label>
+        <input type="number" id="so_to">
+      </form>
+      <p id="PsongorderList">
+      </p>
+      <p>
+      <button onclick="sw.newsongorder()">Új zenerend</button>
+      <br>
+      <textarea id=songorderIn></textarea> 
+      <input id=searchInput></input> 
+      <button onclick="sw.search()">Keresés</button>
+      <p id=searchOut></p>
+      </p>
+    </div>
+    <br/>
+    <div id=errors></div>
+    <br/>
+    <button onclick="sw.makeplaces()">ok</button>
+    <label>Helyek beillesztése 'A fény ami bennem ég' című dalba (A zárón )</label>
+    <br/>
+    <textarea id=vilagsarkok></textarea> 
+    <br/>
+    <p id="talklist">XXX</p>
+    <button onclick="sw.new_talk()">Új bevezető</button>
+    <button onclick="sw.ok_all()">Ok mindre</button>
+  </body>
+
+  <script>
+    sw=require('./setup_window')
+    sw.init()
+  </script>
+  <style>
+
+    #head_info{
+      width: 48%;
+    }
+    #show_main{
+      float: right;
+      width: 48%;
+    }
+    #talk_params{display:none;}
+    #song_params{display:none;}
+    #music_params{display:none;}
+    p.fleft{
+	margin: 0px;
+	padding: 0px;
+	float:left;
+    }
+    p.fmid{
+	margin: 0px;
+	padding: 0px;
+	text-align:center;
+	float:middle;
+	width:100%
+    }
+    #PsongorderList{
+      height: 300px;
+      width: 48%;
+      overflow: scroll;
+      float: left;
+    }
+    #songorderIn{
+      height: 300px;
+      width: 48%;
+      overflow: scroll;
+    }
+    #errors{
+      color: red;
+    }
+  </style>
+</html>
+

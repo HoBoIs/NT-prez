@@ -1,0 +1,259 @@
+[{
+  "title": "Bemutatkozás",
+  "name": "Dalma & Balázs",
+  "music": "-",
+  "thanks": {
+    "id": "2",
+    "names": ["Dalmát",
+    "Balázst"]
+  },
+  "image": "-"
+},
+{
+  "title": "Isten hívása",
+  "name": "N. Kinga",
+  "music": "-",
+  "thanks": {
+    "id": "0",
+    "names": ["Kingáért"]
+  },
+  "image": "-"
+},
+{
+  "title": "Elmélkedés az imáról",
+  "name": "Kincső",
+  "music": "-",
+  "thanks": {
+    "id": "1",
+    "names": ["Kincsőt"]
+  },
+  "image": "-"
+},
+{
+  "title": "Az élet mint önátadás",
+  "name": "Erzsi",
+  "music": "-",
+  "thanks": {
+    "id": "0",
+    "names": ["Erzsiért"]
+  },
+  "image": "-"
+},
+{
+  "title": "Saját képem,\nIsten képe rólam",
+  "name": "Noncsi & Koppány",
+  "music": "-",
+  "thanks": {
+    "id": "2",
+    "names": ["Noncsit",
+    "Koppányt"]
+  },
+  "image": "-"
+},
+{
+  "title": "Krisztus műve",
+  "name": "Kata",
+  "music": "-",
+  "thanks": {
+    "id": "1",
+    "names": ["Katát"]
+  },
+  "image": "-"
+},
+{
+  "title": "Kereszténynek lenni",
+  "name": "Lilla & Levi",
+  "music": "-",
+  "thanks": {
+    "id": "2",
+    "names": ["Lillát",
+    "Levit"]
+  },
+  "image": "-"
+},
+{
+  "title": "Keresztény közösség",
+  "name": "A. Anna & Domi",
+  "music": "-",
+  "thanks": {
+    "id": "2",
+    "names": ["Annát",
+    "Domit"]
+  },
+  "image": "-"
+},
+{
+  "title": "Kiengesztelődés",
+  "name": "Ádám",
+  "music": "-",
+  "thanks": {
+    "id": "0",
+    "names": ["Ádámért"]
+  },
+  "image": "-"
+},
+{
+  "title": "Elmélkedés az\nEucharisztiáról",
+  "name": "Feri",
+  "music": "-",
+  "thanks": {
+    "id": "1",
+    "names": ["Ferit"]
+  },
+  "image": "-"
+},
+{
+  "title": "Egyház a világban",
+  "name": "Zsifi & Márton",
+  "music": "-",
+  "thanks": {
+    "id": "2",
+    "names": ["Zsifit",
+    "Mártont"]
+  },
+  "image": "-"
+},
+{
+  "title": "Küldetés",
+  "name": "Julcsa & Márk",
+  "music": "-",
+  "thanks": {
+    "id": "2",
+    "names": ["Julcsát",
+    "Márkot"]
+  },
+  "image": "-"
+},
+{
+  "title": "Krisztus követése",
+  "name": "H. Zsófi & Tádé",
+  "music": "-",
+  "thanks": {
+    "id": "2",
+    "names": ["Zsófit",
+    "Tádét"]
+  },
+  "image": "-"
+},
+{
+  "title": "Krisztusért dolgozni",
+  "name": "Dalma & Balázs",
+  "music": "-",
+  "thanks": {
+    "id": "2",
+    "names": ["Dalmát",
+    "Balázst"]
+  },
+  "image": "-"
+},
+{
+  "title": "Logo",
+  "name": "-",
+  "image": "polominta_light_aranyok.png",
+  "music": "-",
+  "thanks": {
+    "id": "0",
+    "names": ["-"]
+  }
+},
+{
+  "title": "Lovegun pápa",
+  "name": "",
+  "image": "lovegun.jpg",
+  "music": "-",
+  "thanks": {
+    "id": "1",
+    "names": ["-"]
+  }
+},
+{
+  "title": "Fehér",
+  "name": "Üres dia",
+  "image": "Feher.png",
+  "music": "-",
+  "thanks": {
+    "id": "2",
+    "names": ["-",
+    ""]
+  }
+},
+{
+  "title": "Lovegun Szalai",
+  "name": "",
+  "music": "-",
+  "thanks": {
+    "id": "0",
+    "names": ["-"]
+  },
+  "image": "szalai.jpg"
+},
+{
+  "title": "Igyatok sokat!",
+  "name": "De tényleg... Tea, víz, stb.",
+  "music": "-",
+  "thanks": {
+    "id": "0",
+    "names": ["-"]
+  },
+  "image": "-"
+},
+{
+  "title": "KISCSOPORT",
+  "name": "",
+  "music": "-",
+  "thanks": {
+    "id": "0",
+    "names": ["-"]
+  },
+  "image": "-"
+},
+{
+  "title": "Techinka teszt",
+  "name": "Levi és Balázs",
+  "music": "-",
+  "thanks": {
+    "id": "0",
+    "names": ["-"]
+  },
+  "image": "-"
+},
+{
+  "title": "Keretmese",
+  "name": "Orsi és Ádám",
+  "music": "-",
+  "thanks": {
+    "id": "0",
+    "names": ["-"]
+  },
+  "image": "keret1.jpg"
+},
+{
+  "title": "Bemutatás",
+  "name": "Kincső",
+  "music": "-",
+  "thanks": {
+    "id": "0",
+    "names": ["-"]
+  },
+  "image": "Kincso.png"
+},
+{
+  "title": "JÁTÉK",
+  "name": "-",
+  "music": "-",
+  "thanks": {
+    "id": "0",
+    "names": ["-"]
+  },
+  "image": "-"
+},
+{
+  "title": "Alapcím",
+  "name": "-",
+  "music": "-",
+  "image": "-",
+  "thanks": {
+    "id": "1",
+    "names": ["-"]
+  }
+}]

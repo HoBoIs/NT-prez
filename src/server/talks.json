@@ -1,0 +1,294 @@
+[{
+  "title": "Bemutatkozás",
+  "name": "M. Julcsi & Andris",
+  "music": "-",
+  "isVideo": true,
+  "thanks": {
+    "id": "2",
+    "names": ["Julcsit",
+    "Andrist"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Isten hívása",
+  "name": "V. Emese",
+  "music": "Emese_zene.mp3",
+  "isVideo": false,
+  "thanks": {
+    "id": "0",
+    "names": ["Emeséért"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Elmélkedés az imáról",
+  "name": "Réka",
+  "music": "Reka_zene.mp3",
+  "isVideo": false,
+  "thanks": {
+    "id": "1",
+    "names": ["Rékát"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Az élet mint önátadás",
+  "name": "Dani",
+  "music": "Dani_zene.mp3",
+  "isVideo": false,
+  "thanks": {
+    "id": "0",
+    "names": ["Daniért"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Önkép",
+  "name": "A. Sári & Tádé",
+  "music": "sari_tade.mp3",
+  "isVideo": false,
+  "thanks": {
+    "id": "2",
+    "names": ["Sárit",
+    "Tádét"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Krisztus műve",
+  "name": "Bogi",
+  "music": "Bogi_Zene.mp3",
+  "isVideo": false,
+  "thanks": {
+    "id": "1",
+    "names": ["Bogit"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Kereszténynek lenni",
+  "name": "Luca",
+  "music": "Luca_zene.mp3",
+  "isVideo": false,
+  "thanks": {
+    "id": "0",
+    "names": ["Lucáért"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Keresztény közösség",
+  "name": "Eszti",
+  "music": "Eszter_zene.mp3",
+  "isVideo": false,
+  "thanks": {
+    "id": "0",
+    "names": ["Esztiért"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Kiengesztelődés",
+  "name": "Marci",
+  "music": "-",
+  "isVideo": false,
+  "thanks": {
+    "id": "-1",
+    "names": ["-"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Elmélkedés az\nEucharisztiáról",
+  "name": "Anti",
+  "music": "Anti_zene.wav",
+  "isVideo": false,
+  "thanks": {
+    "id": "1",
+    "names": ["Antit"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Egyház a világban",
+  "name": "W. Júlia & Domi",
+  "music": "-",
+  "isVideo": false,
+  "thanks": {
+    "id": "2",
+    "names": ["Júliát",
+    "Domit"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Küldetés",
+  "name": "Bazsi",
+  "music": "Bazsi_zene.wav",
+  "isVideo": false,
+  "thanks": {
+    "id": "0",
+    "names": ["Bazsiért"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Krisztus követése",
+  "name": "Julcsa & Márk",
+  "music": "Mark_zene_cut.mp3",
+  "isVideo": false,
+  "thanks": {
+    "id": "2",
+    "names": ["Julcsát",
+    "Márkot"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Krisztusért dolgozni",
+  "name": "M. Julcsi & Andris",
+  "music": "Julcsi_Andris_zene.mp3",
+  "isVideo": false,
+  "thanks": {
+    "id": "2",
+    "names": ["Julcsit",
+    "Andrist"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Igyatok sokat!",
+  "name": "De tényleg... Tea, víz, stb.",
+  "music": "-",
+  "isVideo": false,
+  "thanks": {
+    "id": "0",
+    "names": ["-"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Ittál ma már eleget?",
+  "name": "Biztos?",
+  "music": "-",
+  "isVideo": false,
+  "thanks": {
+    "id": "0",
+    "names": ["-"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Logo",
+  "name": "-",
+  "images": ["polominta_light_aranyok.png"],
+  "music": "-",
+  "isVideo": false,
+  "thanks": {
+    "id": "0",
+    "names": ["-"]
+  }
+},
+{
+  "title": "Lovegun pápa",
+  "name": "",
+  "images": ["lovegun.jpg"],
+  "music": "-",
+  "isVideo": false,
+  "thanks": {
+    "id": "1",
+    "names": ["-"]
+  }
+},
+{
+  "title": "Fehér",
+  "name": "Üres dia",
+  "images": ["Feher.png"],
+  "music": "-",
+  "isVideo": false,
+  "thanks": {
+    "id": "-1",
+    "names": ["-",
+    ""]
+  }
+},
+{
+  "title": "Lovegun Szalai",
+  "name": "",
+  "music": "-",
+  "isVideo": false,
+  "thanks": {
+    "id": "-1",
+    "names": ["-"]
+  },
+  "images": ["szalai.jpg",
+  "-",
+  "lovegun.jpg"]
+},
+{
+  "title": "Techinka teszt",
+  "name": "Levi és Balázs",
+  "music": "pakolas.mp3",
+  "isVideo": false,
+  "thanks": {
+    "id": "-1",
+    "names": ["-"]
+  },
+  "images": ["-"]
+},
+{
+  "title": "Keretmese",
+  "name": "-",
+  "music": "Keretm_1.mp3",
+  "isVideo": false,
+  "images": ["Feher.png"],
+  "thanks": {
+    "id": "-1",
+    "names": ["NO"]
+  }
+},
+{
+  "title": "Keretmese2",
+  "name": "",
+  "music": "Keretm_2_1_szkander.mp3",
+  "isVideo": false,
+  "thanks": {
+    "id": "-1",
+    "names": ["-"]
+  },
+  "images": ["Feher.png"]
+},
+{
+  "title": "Keretmese2b",
+  "name": "-",
+  "music": "Keretm_2_2_harc.mp3",
+  "isVideo": false,
+  "thanks": {
+    "id": "-1",
+    "names": ["-"]
+  },
+  "images": ["Feher.png"]
+},
+{
+  "title": "KeretVid",
+  "name": "-",
+  "music": "Keretmese_Oroszlankiraly.mp4",
+  "images": ["Feher.png"],
+  "isVideo": true,
+  "thanks": {
+    "id": "-1",
+    "names": ["-"]
+  }
+},
+{
+  "title": "KeretMese4",
+  "name": "-",
+  "music": "Keretm_4.mp3",
+  "images": ["Feher.png"],
+  "isVideo": false,
+  "thanks": {
+    "id": "-1",
+    "names": ["-"]
+  }
+}]

@@ -648,9 +648,15 @@ function updateGit(){
     try{
     if(shell.which('git')){
 	try{
-	    shell.exec('git pull')//TEST
 	    s=shell.pwd()
+	    if (s.ends_with("win32-x64")){
+		shell.cd("resources")
+		shell.cd("app")
+	    }
+	    s=shell.pwd()
+	    aa=shell.exec('git pull')//TEST
 	    process.stdout.write(s+"\n");
+	    process.stdout.write(aa+"\n");
 	    /*if (out=="Already up to date.\n"){
 		process.stdout.write("No new thing was found\n")
 	    }else{

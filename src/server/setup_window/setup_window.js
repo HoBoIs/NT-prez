@@ -649,7 +649,7 @@ function updateGit(){
     if(shell.which('git')){
 	try{
 	    s=shell.pwd()
-	    if (s.ends_with("win32-x64")){
+	    if (s.endsWith("win32-x64")){
 		shell.cd("resources")
 		shell.cd("app")
 	    }

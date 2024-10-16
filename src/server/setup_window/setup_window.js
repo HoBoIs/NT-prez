@@ -649,6 +649,7 @@ function updateGit(){
     if(shell.which('git')){
 	try{
 	    s=shell.pwd()
+	    process.stdout.write(s+"\n");
 	    if (s.endsWith("win32-x64")){
 		shell.cd("resources")
 		shell.cd("app")

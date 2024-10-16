@@ -1,8 +1,4 @@
-try{
-nodegit = require("nodegit");
-}catch(err){
-process.stdout.write(err+"\n")
-}
+shell = require('shelljs');
 cfn=require('./conv_fname')
 lc=require('./lent_conv')
 pauseable=require('pauseable')
@@ -649,6 +645,25 @@ process.stdout.write("CALLED.\n");
 
 function updateGit(){
     process.stdout.write("PUSHED.");
-    pullChangesFromUpstream();
+    try{
+    if(shell.which('git')){
+	try{
+	    out=shell.exec('git pull').stdout
+	    if (out=="Already up to date.\n"){
+		process.stdout.write("No new thing was found\n")
+	    }else{
+		process.stdout.write("updated\n")
+	    }
+	} catch (error) {
+	    process.stdout.write("Error during pull operation:"+ error);
+	}
+	process.stdout.write("Done");
+    }else{
+	process.stdout.write("ERROR, no git\n");
+    }
+	} catch (error) {
+	    process.stdout.write("Error during pull operation:"+ error);
+	}
+    //pullChangesFromUpstream();
 }
 module.exports={updateGit,delete_talk,move_talk,search,ok_all,new_talk,init,refreshdb,songordercall,lent_change,importcall,newsongorder,makeplaces,reset_talk,refresh_talk,submit_talk}

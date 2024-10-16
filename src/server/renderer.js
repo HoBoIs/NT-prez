@@ -432,9 +432,10 @@ const renderTalkImage=()=>{
   if (getTalkImage() != "-") {
     talkContainer.style.width="100%"
     talkContainer.style.height="100%"
-    talkContainer.style.backgroundImage = `url(`+path.join(config.images_dir, getTalkImage())+`)`
+    talkContainer.style.backgroundImage = `url(`+path.join(config.images_dir, getTalkImage()).replace(/\\/g,'/')+`)`
     talkTitle.innerText = ''
     talkName.innerText = ''
+    process.stdout.write(talkContainer.style.backgroundImage+"      S\n");
   } else {
 	//talkContainer.innerHTML=talkContainer.innerHTML.replace(/|.*/gi,"")
 	/*talkContainer.innerHTML=`

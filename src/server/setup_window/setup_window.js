@@ -654,7 +654,7 @@ function updateGit(){
 		shell.cd("resources")
 		shell.cd("app")
 	    }
-	    s=shell.pwd()
+	    s=shell.pwd()//???
 	    aa=shell.exec('git pull')
 	    process.stdout.write(s+"\n");
 	    process.stdout.write(aa+"\n");

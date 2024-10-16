@@ -648,7 +648,7 @@ function updateGit(){
     try{
     if(shell.which('git')){
 	try{
-	    shell.exec('git pull')//TESTTT
+	    shell.exec('git pull')//TEST
 	    /*if (out=="Already up to date.\n"){
 		process.stdout.write("No new thing was found\n")
 	    }else{

@@ -648,12 +648,12 @@ function updateGit(){
     try{
     if(shell.which('git')){
 	try{
-	    out=shell.exec('git pull').stdout
-	    if (out=="Already up to date.\n"){
+	    shell.exec('git pull')//TESTTT
+	    /*if (out=="Already up to date.\n"){
 		process.stdout.write("No new thing was found\n")
 	    }else{
 		process.stdout.write("updated\n")
-	    }
+	    }*/
 	} catch (error) {
 	    process.stdout.write("Error during pull operation:"+ error);
 	}

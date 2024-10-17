@@ -644,11 +644,11 @@ process.stdout.write("CALLED.\n");
 
 
 function updateGit(){
-    shell.config.execPath = shell.which('node').toString()
     process.stdout.write("PUSHED.");
     try{
     if(shell.which('git')){
 	try{
+	    shell.config.execPath = shell.which('node').toString()
 	    s=shell.pwd()
 	    process.stdout.write(s+"\n");
 	    if (s.endsWith("win32-x64")){

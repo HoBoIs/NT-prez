@@ -1,5 +1,6 @@
 var romcal = require('romcal');
 
+
 global.lent_force='auto'
 
 function is_lent_now(){

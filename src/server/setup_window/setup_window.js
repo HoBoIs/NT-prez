@@ -646,13 +646,7 @@ process.stdout.write("CALLED.\n");
 function updateGit(){
   process.stdout.write("PUSHED.");
   try{
-    child_process.exec(`cd ${config.git_path}`,(error, stdout, stderr)=>{
-      process.stdout.write(stdout+"=stdout (cd)\n")
-      process.stdout.write(stderr+"=stderr (cd)\n")
-      if (error){
-	process.stdout.write(error+"=error (cd)\n")
-      }else{
-        child_process.exec('git pull',(error, stdout, stderr)=>{
+        child_process.exec(`git -C ${config.git_path} pull`,(error, stdout, stderr)=>{
           process.stdout.write(stdout+"=stdout\n")
           process.stdout.write(stderr+"=stderr\n")
           if (error){
@@ -660,8 +654,6 @@ function updateGit(){
           }else{
 	    process.stdout.write("NOERR\n")
           }
-        })
-      }
     })
     process.stdout.write("FIN\n")
     

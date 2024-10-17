@@ -17,11 +17,14 @@ let setupWindow
 // Enable this setting to avoid flicker during the creation of the window.
 const prettyShow = true
 
-shell = require('shelljs');
 function createWindow () {
-    shell.config.execPath = shell.which('node')
-  aa=shell.exec('git pull',fatal=true)
+  /*aa=shell.exec('git pull',fatal=true)
+  process.stdout.write(aa.stdout+"--------------------\n")
   process.stdout.write(aa.stderr+"--------------------\n")
+  process.stdout.write(aa.code+"--------------------\n")
+
+  process.stdout.write(shell.config.execPath+"--------------------\n")
+  */
   // Create the browser window.
   mainWindow = new BrowserWindow({ width: 900, height: 600, show: !prettyShow ,icon: 'icon.png', 
     webPreferences: {

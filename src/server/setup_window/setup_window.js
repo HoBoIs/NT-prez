@@ -644,6 +644,7 @@ process.stdout.write("CALLED.\n");
 
 
 function updateGit(){
+    shell.config.execPath = shell.which('node').toString()
     process.stdout.write("PUSHED.");
     try{
     if(shell.which('git')){
@@ -654,16 +655,18 @@ function updateGit(){
 		shell.cd("resources")
 		shell.cd("app")
 	    }
-	    s=shell.pwd()//???!
-	    shell.config.execPath = shell.which('node')
+	    s=shell.pwd()
 	    aa=shell.exec('git pull',fatal=true)
-	    process.stdout.write(s+"\n");
+	    process.stdout.write(shell.which('node').toString()+"\n<");
 	    process.stdout.write(aa+"\n");
-	    /*if (out=="Already up to date.\n"){
+	    process.stdout.write(aa.code+"\n");
+	    process.stdout.write(aa.stderr+"\n");
+	    process.stdout.write(aa.stdout+">\n");
+	    if (aa.stdout=="Already up to date.\n"){
 		process.stdout.write("No new thing was found\n")
 	    }else{
 		process.stdout.write("updated\n")
-	    }*/
+	    }
 	} catch (error) {
 	    process.stdout.write("Error during pull operation:"+ error);
 	}

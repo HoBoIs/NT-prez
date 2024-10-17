@@ -1,4 +1,4 @@
-shell = require('shelljs');
+child_process=require('child_process')
 cfn=require('./conv_fname')
 lc=require('./lent_conv')
 pauseable=require('pauseable')
@@ -644,39 +644,30 @@ process.stdout.write("CALLED.\n");
 
 
 function updateGit(){
-    process.stdout.write("PUSHED.");
-    try{
-    if(shell.which('git')){
-	try{
-	    shell.config.execPath = shell.which('node').toString()
-	    s=shell.pwd()
-	    process.stdout.write(s+"\n");
-	    if (s.endsWith("win32-x64")){
-		shell.cd("resources")
-		shell.cd("app")
-	    }
-	    s=shell.pwd()
-	    aa=shell.exec('git pull',fatal=true)
-	    process.stdout.write(shell.which('node').toString()+"\n<");
-	    process.stdout.write(aa+"\n");
-	    process.stdout.write(aa.code+"\n");
-	    process.stdout.write(aa.stderr+"\n");
-	    process.stdout.write(aa.stdout+">\n");
-	    if (aa.stdout=="Already up to date.\n"){
-		process.stdout.write("No new thing was found\n")
-	    }else{
-		process.stdout.write("updated\n")
-	    }
-	} catch (error) {
-	    process.stdout.write("Error during pull operation:"+ error);
-	}
-	process.stdout.write("Done");
-    }else{
-	process.stdout.write("ERROR, no git\n");
-    }
-	} catch (error) {
-	    process.stdout.write("Error during pull operation:"+ error);
-	}
+  process.stdout.write("PUSHED.");
+  try{
+    child_process.exec('cd ${git_path}',(error, stdout, stderr)=>{
+      process.stdout.write(stdout+"=stdout (cd)\n")
+      process.stdout.write(stderr+"=stderr (cd)\n")
+      if (error){
+	process.stdout.write(error+"=error (cd)\n")
+      }else{
+        child_process.exec('git pull',(error, stdout, stderr)=>{
+          process.stdout.write(stdout+"=stdout\n")
+          process.stdout.write(stderr+"=stderr\n")
+          if (error){
+	    process.stdout.write(error+"=error\n")
+          }else{
+	    process.stdout.write("NOERR\n")
+          }
+        })
+      }
+    })
+    process.stdout.write("FIN\n")
+    
+  } catch (error) {
+    process.stdout.write("Error during pull operation:"+ error);
+  }
     //pullChangesFromUpstream();
 }
 module.exports={updateGit,delete_talk,move_talk,search,ok_all,new_talk,init,refreshdb,songordercall,lent_change,importcall,newsongorder,makeplaces,reset_talk,refresh_talk,submit_talk}

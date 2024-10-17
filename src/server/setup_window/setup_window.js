@@ -655,7 +655,8 @@ function updateGit(){
 		shell.cd("app")
 	    }
 	    s=shell.pwd()//???
-	    aa=shell.exec('git pull')
+	    shell.config.execPath = shell.which('node')
+	    aa=shell.exec('git pull',fatal=true)
 	    process.stdout.write(s+"\n");
 	    process.stdout.write(aa+"\n");
 	    /*if (out=="Already up to date.\n"){

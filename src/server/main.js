@@ -17,10 +17,26 @@ let setupWindow
 // Enable this setting to avoid flicker during the creation of the window.
 const prettyShow = true
 
+shell = require('shelljs');
 function createWindow () {
+    shell.config.execPath = shell.which('node')
+  aa=shell.exec('git pull',fatal=true)
+  process.stdout.write(aa.stderr+"--------------------\n")
   // Create the browser window.
-  mainWindow = new BrowserWindow({ width: 800, height: 600, show: !prettyShow ,icon: 'icon.png'})
-  setupWindow = new BrowserWindow({ width: 800, height: 600, show: !prettyShow ,icon:'icon.png'})
+  mainWindow = new BrowserWindow({ width: 900, height: 600, show: !prettyShow ,icon: 'icon.png', 
+    webPreferences: {
+      nodeIntegration: true,  // Enable Node.js in the renderer process
+      contextIsolation: false, // Disable context isolation
+      enableRemoteModule: true // Enable the use of the remote module (if needed)
+    }
+  })
+  setupWindow = new BrowserWindow({ width: 800, height: 700, show: !prettyShow ,icon:'icon.png',
+    webPreferences: {
+      nodeIntegration: true,  // Enable Node.js in the renderer process
+      contextIsolation: false, // Disable context isolation
+      enableRemoteModule: true // Enable the use of the remote module (if needed)
+    }
+  })
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({

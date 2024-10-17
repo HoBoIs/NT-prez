@@ -595,65 +595,17 @@ function lent_change(){
 }
 
 
-process.stdout.write("----0\n")
-
-// Path to the local repository
-const repoPath = config.git_path;
-
-process.stdout.write("----1\n")
-async function pullChangesFromUpstream() {
-process.stdout.write("CALLED.\n");
-  try {
-    // Open the local repository
-    const repo = await nodegit.Repository.open(repoPath);
-
-    // Get the current branch
-    const branchRef = await repo.getCurrentBranch();
-    const branchName = branchRef.shorthand();
-
-    process.stdout.write(`Currently on branch: ${branchName}\n`);
-
-    // Fetch from the 'upstream' remote
-    const remote = await nodegit.Remote.lookup(repo, "NT-prez");
-    process.stdout.write("Fetching from upstream...");
-    await remote.fetch(["refs/heads/master:refs/remotes/upstream/master"], {
-      callbacks: {
-        credentials: () => {
-          return nodegit.Cred.userpassPlaintextNew("username", "password"); // Adjust as necessary
-        },
-        certificateCheck: () => 1, // Skip certificate checks (for testing)
-      },
-    });
-    process.stdout.write("Fetch completed.");
-
-    // Get the upstream branch reference
-    const upstreamBranch = await repo.getBranch("refs/remotes/upstream/master");
-
-    // Merge the upstream/master into the current branch
-    process.stdout.write("Merging upstream/master...");
-    await repo.mergeBranches(branchName, upstreamBranch, nodegit.Signature.now("HBotondI", "horvath.botond.istvan@gmail.com"));
-
-    process.stdout.write("Merge completed.");
-
-  } catch (error) {
-    process.stdout.write("Error during pull operation:"+ error);
-  }
-}
-
-// Call the function to pull changes
-
-
 function updateGit(){
   process.stdout.write("PUSHED.");
   try{
-        child_process.exec(`git -C ${config.git_path} pull`,(error, stdout, stderr)=>{
-          process.stdout.write(stdout+"=stdout\n")
-          process.stdout.write(stderr+"=stderr\n")
-          if (error){
-	    process.stdout.write(error+"=error\n")
-          }else{
-	    process.stdout.write("NOERR\n")
-          }
+    child_process.exec(`git -C ${config.git_path} pull`,(error, stdout, stderr)=>{
+      process.stdout.write(stdout+"=stdout\n")
+      process.stdout.write(stderr+"=stderr\n")
+      if (error){
+        process.stdout.write(error+"=error\n")
+      }else{
+        process.stdout.write("NOERR\n")
+      }
     })
     process.stdout.write("FIN\n")
     

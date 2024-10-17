@@ -654,7 +654,7 @@ function updateGit(){
 		shell.cd("resources")
 		shell.cd("app")
 	    }
-	    s=shell.pwd()//???
+	    s=shell.pwd()//???!
 	    shell.config.execPath = shell.which('node')
 	    aa=shell.exec('git pull',fatal=true)
 	    process.stdout.write(s+"\n");

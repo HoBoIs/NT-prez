@@ -609,8 +609,10 @@ function updateGit(){
   process.stdout.write("PUSHED.");
   try{
     child_process.exec(`git -C "${config.git_path}" pull`,(error, stdout, stderr)=>{
-      process.stdout.write(stdout+"=stdout\n")
-      process.stdout.write(stderr+"=stderr\n")
+      process.stdout.write(stdout+"=stdout\n\n----")
+      if (stderr){
+	process.stdout.write(stderr+"=stderr\n")
+      }
       if (error){
         process.stdout.write(error+"=error\n")
       }else{

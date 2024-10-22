@@ -1,0 +1,5 @@
+2.6.0
+Song editor
+Update app button
+Fix image display bug
+2.5.0

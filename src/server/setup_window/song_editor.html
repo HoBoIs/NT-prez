@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>NT-prez Song Editor</title>
+  </head>
+  <body>
+      <div>
+      <button onclick="ed.saveSong()"> Dal mentése (betöltésnél felülír)</button>
+      <button onclick="ed.saveSongAs()"> Dal mentése új dalként</button>
+      <button onclick="ed.cancel()"> Mégse </button>
+      <button onclick="ed.newSong()"> Új </button>
+      <br>
+      <input id="SongChooser" list="titleList"/>
+      <datalist id="titleList">
+	  
+      </datalist>
+      <button onclick="ed.loadSong()"> Megynyitás </button>
+      </div>
+      <div>
+      Cím(ek):
+      <br>
+      <button onclick="ed.addTitle()"> Alternatív cím </button>
+      <button onclick="ed.delTitle()"> Utolsó cím törlése</button>
+      <div id= "TitleList">
+      </div>
+      <br>
+      <br>
+      Versszak(ok)
+      <br>
+      <button onclick="ed.addVerse()"> Új versszak </button>
+      <button onclick="ed.delVerse()"> Utolsó versszak törlése</button>
+      <div id= "VerseList">
+      </div>
+      <br>
+      <br>
+      Opcionális: böjti versszakok
+      <br>
+      <button onclick="ed.addLentVerse()"> Új versszak nagyböjtre </button>
+      <button onclick="ed.delLentVerse"> Utolsó versszak törlése</button>
+      <div id= "LentVerseList">
+      </div>
+      </div>
+
+  </body>
+  <script>
+    ed=require('./editor')
+    ed.init()
+  </script>
+</html>

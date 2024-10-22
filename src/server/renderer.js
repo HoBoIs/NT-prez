@@ -9,7 +9,6 @@ let prev_first_line="N/A"
 var waiting=0
 process.stdout.write('Starting render...'+'\n')
 const server = require('./server.js')
-//delete require.cache[path.join(setup.path_prefix,"songs.js")]
 var songs = require('./songs.js')
 var thanks = require('./thanks.js')
 var musics = require('./musics.js')
@@ -20,6 +19,11 @@ const path = require('path')
 const NOMUSIC = '-'
 const NOVIDEO = '-'
 const NOIMAGE = '-'
+
+function reloadSongs(){
+    delete require.cache[path.join(setup.path_prefix,"songs.js")]
+    songs = require('./songs.js')
+}
 
 const errors = talks.map(talk => (
   ((
@@ -275,6 +279,8 @@ function sendrefr(){
   server.broadcast('SONGS:' + titleList)
 }
 function refreshdb() {
+  delete require.cache[path.join(config.path_prefix,"songs.js")]
+
   process.stdout.write(location+"=host\n")
   location.reload(true)
 }
@@ -432,7 +438,7 @@ const renderTalkImage=()=>{
   if (getTalkImage() != "-") {
     talkContainer.style.width="100%"
     talkContainer.style.height="100%"
-    talkContainer.style.backgroundImage = `url(`+path.join(config.images_dir, getTalkImage()).replace(/\\/g,'/')+`)`
+    talkContainer.style.backgroundImage = `url("`+path.join(config.images_dir, getTalkImage()).replace(/\\/g,'/')+`")`
     talkTitle.innerText = ''
     talkName.innerText = ''
     process.stdout.write(talkContainer.style.backgroundImage+"      S\n");

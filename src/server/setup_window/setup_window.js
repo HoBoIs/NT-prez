@@ -20,7 +20,7 @@ async function makeQR(ip){
 process.stdout.write('BEEP\n')
 
 function get_all_title_set(){
-    //delete require.cache[path.join(setup.path_prefix,"songs.js")]
+    //delete require.cache[path.join(config.path_prefix,"songs.js")]
     songs=require('../songs')
     title_list=songs.map((x)=>
 	{
@@ -52,6 +52,11 @@ function search(){
     }catch(err){
     process.stdout.write(err.message);
     }
+}
+
+function reloadSongs(){
+    delete require.cache[path.join(config.path_prefix,"songs.js")]
+    songs = require('../songs.js')
 }
 function getSongList(){
     lines= (fs.readFileSync(sofname).toString()).split('\n')
@@ -207,6 +212,10 @@ function set_satus_song(status){
     document.getElementById("song_num").innerText=status.number
 }
 process.stdout.write("----1\n")
+ipcRenderer.on('to_s_refr',function(event,arg){
+    reloadSongs()
+    refreshdb()
+})
 ipcRenderer.on('to_s_flines', function (event, arg){
     document.getElementById('song_prev_first_line').innerHTML=arg[0]
     document.getElementById('song_nxt_first_line').innerHTML=arg[1]
@@ -594,11 +603,12 @@ function lent_change(){
     ipcRenderer.send('to_main_lent',global.lent_force)
 }
 
-
+function displaySongEditor(){
+}
 function updateGit(){
   process.stdout.write("PUSHED.");
   try{
-    child_process.exec(`git -C ${config.git_path} pull`,(error, stdout, stderr)=>{
+    child_process.exec(`git -C "${config.git_path}" pull`,(error, stdout, stderr)=>{
       process.stdout.write(stdout+"=stdout\n")
       process.stdout.write(stderr+"=stderr\n")
       if (error){
@@ -606,12 +616,15 @@ function updateGit(){
       }else{
         process.stdout.write("NOERR\n")
       }
+      window.alert(`output:<br>${stdout}<br><br>error out<br>${stderr}`)
     })
     process.stdout.write("FIN\n")
-    
   } catch (error) {
     process.stdout.write("Error during pull operation:"+ error);
   }
-    //pullChangesFromUpstream();
 }
-module.exports={updateGit,delete_talk,move_talk,search,ok_all,new_talk,init,refreshdb,songordercall,lent_change,importcall,newsongorder,makeplaces,reset_talk,refresh_talk,submit_talk}
+function editor(){
+    process.stdout.write("CLICKED\n");
+    window.open('./song_editor.html')
+}
+module.exports={editor,updateGit,delete_talk,move_talk,search,ok_all,new_talk,init,refreshdb,songordercall,lent_change,importcall,newsongorder,makeplaces,reset_talk,refresh_talk,submit_talk}

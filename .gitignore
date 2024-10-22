@@ -5,10 +5,13 @@ node_modules
 *.swp
 *.swo
 *~
+*.png
+*.jpg
 
 src/server/music
 src/server/talkmusic
 src/server/songs
 src/server/video
 src/server/images
+src/server/talks.json
 src/server/setup_window/songorder.txt

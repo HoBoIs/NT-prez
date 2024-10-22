@@ -8,7 +8,7 @@ const folder = config.song_dir
 const songs = []
 fs.readdirSync(folder).forEach((file)=> {
   try{
-    //delete require.cache[path.join(folder, file)]
+    delete require.cache[path.join(folder, file)]
     songs.push(require(path.join(folder, file)))
 
     if ("0"<=file[0]&&file[0]<="9"){//sorszám eléírása

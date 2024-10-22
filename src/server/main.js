@@ -26,20 +26,8 @@ function createWindow () {
   process.stdout.write(shell.config.execPath+"--------------------\n")
   */
   // Create the browser window.
-  mainWindow = new BrowserWindow({ width: 900, height: 600, show: !prettyShow ,icon: 'icon.png', 
-    webPreferences: {
-      nodeIntegration: true,  // Enable Node.js in the renderer process
-      contextIsolation: false, // Disable context isolation
-      enableRemoteModule: true // Enable the use of the remote module (if needed)
-    }
-  })
-  setupWindow = new BrowserWindow({ width: 800, height: 700, show: !prettyShow ,icon:'icon.png',
-    webPreferences: {
-      nodeIntegration: true,  // Enable Node.js in the renderer process
-      contextIsolation: false, // Disable context isolation
-      enableRemoteModule: true // Enable the use of the remote module (if needed)
-    }
-  })
+  mainWindow = new BrowserWindow({ width: 900, height: 600, show: !prettyShow ,icon: 'icon.png'})
+  setupWindow = new BrowserWindow({ width: 800, height: 700, show: !prettyShow ,icon:'icon.png'})
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
@@ -106,6 +94,12 @@ function createWindow () {
     event.sender.send('nameReply', { not_right: false })
     setupWindow.webContents.send( 'to_s_audioevent', arg ); 
   })
+
+  electron.ipcMain.on('to_setup_refr', (event, arg) => {
+    event.sender.send('nameReply', { not_right: false })
+    setupWindow.webContents.send( 'to_s_refr', arg ); 
+  })
+
   electron.ipcMain.on('to_set_status', (event, arg) => {
     event.sender.send('nameReply', { not_right: false })
     setupWindow.webContents.send( 'to_s_status', arg ); 

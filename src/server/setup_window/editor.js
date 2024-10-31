@@ -268,5 +268,5 @@ function getContents(from,cnt){
 module.exports={
     delVerse,delLentVerse,delTitle,
     addVerse,addLentVerse,addTitle,
-    init,cancel,saveSong,newSong,loadSong
+    init,cancel,saveSong,newSong,loadSong,saveSongAs
 }
